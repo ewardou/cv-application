@@ -17,6 +17,25 @@
         "test": "react-scripts test",
         "eject": "react-scripts eject"
     },
+    "prettier": {
+        "arrowParens": "always",
+        "bracketSameLine": false,
+        "bracketSpacing": true,
+        "embeddedLanguageFormatting": "auto",
+        "htmlWhitespaceSensitivity": "css",
+        "insertPragma": false,
+        "jsxSingleQuote": false,
+        "printWidth": 80,
+        "proseWrap": "preserve",
+        "quoteProps": "as-needed",
+        "requirePragma": false,
+        "semi": true,
+        "singleQuote": true,
+        "tabWidth": 4,
+        "trailingComma": "es5",
+        "useTabs": false,
+        "vueIndentScriptAndStyle": false
+    },
     "eslintConfig": {
         "extends": [
             "react-app",
@@ -37,6 +56,7 @@
         ]
     },
     "devDependencies": {
+        "eslint-config-prettier": "^8.6.0",
         "prettier": "^2.8.3"
     }
 }

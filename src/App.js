@@ -5,11 +5,17 @@ import Experience from './components/Experience';
 
 class EditButton extends React.Component {
     render() {
-        let button = <button>Edit</button>;
-        if (!this.props.isEditing) {
+        let button = <Button onClick={this.props.onClick} text={'edit'} />;
+        if (this.props.isEditing) {
             button = null;
         }
-        return <div>{button}</div>;
+        return button;
+    }
+}
+
+class Button extends React.Component {
+    render() {
+        return <button onClick={this.props.onClick}>{this.props.text}</button>;
     }
 }
 
@@ -17,19 +23,39 @@ class App extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-            isEditing: false,
+            isEditing: true,
         };
     }
 
+    editFields = (e) => {
+        e.preventDefault();
+        this.setState((state) => ({
+            isEditing: !state.isEditing,
+        }));
+    };
+
     render() {
+        const editing = this.state.isEditing;
+        let submitButton;
+        if (editing) {
+            submitButton = <Button onClick={this.editFields} text={'Submit'} />;
+        } else {
+            submitButton = <Button text={'Confirm'} />;
+        }
         return (
             <div className="App">
-                <General />
-                <Education />
-                <Experience />
-                <div>
-                    <EditButton isEditing={this.state.isEditing} />
-                </div>
+                <form>
+                    <General isEditing={editing} />
+                    <Education isEditing={editing} />
+                    <Experience isEditing={editing} />
+                    <div>
+                        <EditButton
+                            isEditing={editing}
+                            onClick={this.editFields}
+                        />
+                        {submitButton}
+                    </div>
+                </form>
             </div>
         );
     }

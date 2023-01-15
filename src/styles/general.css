@@ -1,0 +1,27 @@
+* {
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+label {
+    font-weight: bold;
+    font-size: 1rem;
+}
+
+h1 {
+    margin-bottom: 15px;
+}
+
+section {
+    border: solid rgb(158, 156, 156) 2px;
+    background-color: white;
+    padding: 10px;
+    margin: 20px auto;
+    width: 70%;
+    border-radius: 5px;
+}
+
+body {
+    background-image: url(./geometric-leaves.png);
+}

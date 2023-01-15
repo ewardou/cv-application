@@ -18,18 +18,20 @@ class Education extends React.Component {
                     labelText="Degree"
                     isEditing={this.props.isEditing}
                 />
-                <Field
-                    id="from"
-                    type="date"
-                    labelText="From: "
-                    isEditing={this.props.isEditing}
-                />
-                <Field
-                    id="to"
-                    type="date"
-                    labelText="To: "
-                    isEditing={this.props.isEditing}
-                />
+                <div>
+                    <Field
+                        id="from"
+                        type="date"
+                        labelText="From: "
+                        isEditing={this.props.isEditing}
+                    />
+                    <Field
+                        id="to"
+                        type="date"
+                        labelText="To: "
+                        isEditing={this.props.isEditing}
+                    />
+                </div>
             </section>
         );
     }

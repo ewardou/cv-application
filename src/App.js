@@ -5,7 +5,7 @@ import Experience from './components/Experience';
 
 class EditButton extends React.Component {
     render() {
-        let button = <Button onClick={this.props.onClick} text={'edit'} />;
+        let button = <Button onClick={this.props.onClick} text={'Edit'} />;
         if (this.props.isEditing) {
             button = null;
         }

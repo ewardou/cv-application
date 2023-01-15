@@ -22,18 +22,20 @@ class Experience extends React.Component {
                     <label htmlFor="tasks">Tasks</label>
                     <textarea id="tasks" />
                 </div>
-                <Field
-                    id="from"
-                    type="date"
-                    labelText="From: "
-                    isEditing={this.props.isEditing}
-                />
-                <Field
-                    id="to"
-                    type="date"
-                    labelText="To: "
-                    isEditing={this.props.isEditing}
-                />
+                <div>
+                    <Field
+                        id="from"
+                        type="date"
+                        labelText="From: "
+                        isEditing={this.props.isEditing}
+                    />
+                    <Field
+                        id="to"
+                        type="date"
+                        labelText="To: "
+                        isEditing={this.props.isEditing}
+                    />
+                </div>
             </section>
         );
     }

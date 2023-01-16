@@ -13,6 +13,8 @@
     },
     "scripts": {
         "start": "react-scripts start",
+        "predeploy": "npm run build",
+        "deploy": "gh-pages -d build",
         "build": "react-scripts build",
         "test": "react-scripts test",
         "eject": "react-scripts eject"
@@ -57,6 +59,8 @@
     },
     "devDependencies": {
         "eslint-config-prettier": "^8.6.0",
+        "gh-pages": "^4.0.0",
         "prettier": "^2.8.3"
-    }
+    },
+    "homepage": "http://ewardou.github.io/cv-application"
 }

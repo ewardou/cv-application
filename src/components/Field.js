@@ -15,20 +15,27 @@ class Field extends React.Component {
     };
 
     render() {
+        let newInput = (
+            <input
+                id={this.props.id}
+                type={this.props.type}
+                value={this.state.value}
+                onChange={this.updateValue}
+            />
+        );
+        if (this.props.type === 'textarea') {
+            newInput = (
+                <textarea
+                    id={this.props.id}
+                    value={this.state.value}
+                    onChange={this.updateValue}
+                />
+            );
+        }
         return (
             <div>
                 <label htmlFor={this.props.id}>{this.props.labelText}</label>
-                {this.props.isEditing ? (
-                    <input
-                        id={this.props.id}
-                        type={this.props.type}
-                        required
-                        value={this.state.value}
-                        onChange={this.updateValue}
-                    />
-                ) : (
-                    <p>{this.state.value}</p>
-                )}
+                {this.props.isEditing ? newInput : <p>{this.state.value}</p>}
             </div>
         );
     }

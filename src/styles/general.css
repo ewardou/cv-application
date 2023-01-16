@@ -37,6 +37,7 @@ body {
 
 textarea {
     resize: none;
+    height: 60px;
 }
 
 .App > form > div {

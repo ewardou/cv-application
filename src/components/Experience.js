@@ -1,16 +1,16 @@
 import React from 'react';
 import Field from './Field';
 
-class Experience extends React.Component {
+class NewExperience extends React.Component {
     render() {
         return (
-            <section>
-                <h1>Professional experience</h1>
+            <div>
                 <Field
                     id="company"
                     labelText="Company name"
                     type="text"
                     isEditing={this.props.isEditing}
+                    onChange={this.force}
                 />
                 <Field
                     id="position"
@@ -18,10 +18,12 @@ class Experience extends React.Component {
                     type="text"
                     isEditing={this.props.isEditing}
                 />
-                <div>
-                    <label htmlFor="tasks">Tasks</label>
-                    <textarea id="tasks" />
-                </div>
+                <Field
+                    id="tasks"
+                    type="textarea"
+                    labelText="Tasks"
+                    isEditing={this.props.isEditing}
+                />
                 <div>
                     <Field
                         id="from"
@@ -36,6 +38,37 @@ class Experience extends React.Component {
                         isEditing={this.props.isEditing}
                     />
                 </div>
+            </div>
+        );
+    }
+}
+
+class Experience extends React.Component {
+    constructor(props) {
+        super(props);
+        this.state = {
+            count: 0,
+        };
+    }
+
+    addNewObject = () => {
+        this.setState((state) => ({
+            count: state.count + 1,
+        }));
+    };
+
+    render() {
+        let array = [];
+        for (let i = 0; i < this.state.count; i++) {
+            array.push(<NewExperience isEditing={this.props.isEditing} />);
+        }
+        return (
+            <section>
+                <h1>Professional experience</h1>
+                <button type="button" onClick={this.addNewObject}>
+                    +
+                </button>
+                {array}
             </section>
         );
     }

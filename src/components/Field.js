@@ -21,6 +21,7 @@ class Field extends React.Component {
                 type={this.props.type}
                 value={this.state.value}
                 onChange={this.updateValue}
+                required
             />
         );
         if (this.props.type === 'textarea') {

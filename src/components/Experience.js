@@ -60,16 +60,20 @@ class Experience extends React.Component {
     render() {
         let array = [];
         for (let i = 0; i < this.state.count; i++) {
-            array.push(<NewExperience isEditing={this.props.isEditing} />);
+            array.push(
+                <NewExperience isEditing={this.props.isEditing} key={i} />
+            );
         }
         return (
-            <section>
-                <h1>Professional experience</h1>
-                {this.props.isEditing ? (
-                    <button type="button" onClick={this.addNewObject}>
-                        +
-                    </button>
-                ) : null}
+            <section className="experience">
+                <div>
+                    <h1>Professional experience</h1>
+                    {this.props.isEditing ? (
+                        <button type="button" onClick={this.addNewObject}>
+                            +
+                        </button>
+                    ) : null}
+                </div>
                 {array}
             </section>
         );

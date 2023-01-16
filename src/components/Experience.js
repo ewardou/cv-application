@@ -65,9 +65,11 @@ class Experience extends React.Component {
         return (
             <section>
                 <h1>Professional experience</h1>
-                <button type="button" onClick={this.addNewObject}>
-                    +
-                </button>
+                {this.props.isEditing ? (
+                    <button type="button" onClick={this.addNewObject}>
+                        +
+                    </button>
+                ) : null}
                 {array}
             </section>
         );
